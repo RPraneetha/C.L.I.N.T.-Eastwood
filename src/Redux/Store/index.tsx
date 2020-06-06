@@ -2,22 +2,22 @@ import { compose, applyMiddleware, createStore, Store, StoreEnhancer, combineRed
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import { persistStore, autoRehydrate } from 'redux-persist';
-import user, { UserState, initUserState } from '../Modules/User';
-import status, { StatusState, initStatusState } from '../Modules/Status';
+// import user, { UserState, initUserState } from '../Modules/User';
+// import status, { StatusState, initStatusState } from '../Modules/Status';
 import logger from 'redux-logger';
 
 export interface RootState {
-  status: StatusState;
-  user: UserState;
+    // status: StatusState;
+    // user: UserState;
 }
 const initState: RootState = {
-  status: initStatusState,
-  user: initUserState
-}; 
+    // status: initStatusState,
+    // user: initUserState
+};
 
 const rootReducer = combineReducers<RootState>({
-  user,
-  status
+    // user,
+    // status
 });
 
 const hydrate: StoreEnhancer<RootState> = autoRehydrate() as StoreEnhancer<RootState>;
